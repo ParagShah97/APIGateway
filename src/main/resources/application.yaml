@@ -8,7 +8,7 @@ spring:
     name: CloudGateway
   # Config server: it's another service which give common config.
   config:
-    import: configserver:http://localhost:9296
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:9296
 
   # Cloud coonfiguration for gateway to route the API calls
   cloud:
@@ -57,7 +57,7 @@ spring:
 okta:
   oauth2:
     issuer: https://dev-kxjt0wcpmhjbhqvx.us.auth0.com/
-    client-id:
+    client-id: 
     client-secret: 
     scope: openid, profile, email, offline_access, internal
 
